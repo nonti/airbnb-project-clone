@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CreateLsiting = () => {
+const CreateListing = () => {
   return (
     <div>CreateLsiting</div>
   )
 }
 
-export default CreateLsiting
+export default CreateListing
