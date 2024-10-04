@@ -1,8 +1,11 @@
 import React from 'react'
-
+import '../styles/Banner.css';
 const Banner = () => {
   return (
-    <div>Banner</div>
+    <div className='photo1'>
+      <div>Not sure where to go? Perfect.</div>
+      <button>I'm flexible</button>
+    </div>
   )
 }
 

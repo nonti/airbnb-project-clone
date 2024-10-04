@@ -1,7 +1,7 @@
 import React, { useState,  useRef } from "react";
 // import {useLocation} from "react-router-dom";
 import "../styles/Header.css";
-// import logo from "../../assets/svg/logo_s.svg";
+import logo from "../assets/svg/logo_s.svg";
 // import logo_s from "../../assets/svg/airbnb.svg";
 // import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -38,11 +38,13 @@ const Header = () => {
   return (
     <>
       <div className='header'>
-        {/* <img
+        <Link to='/'>
+         <img
           src={logo}
           alt="logo"
           className="header-logo"
-        /> */}
+        />  
+        </Link>
      
           <div className="header-text">
             <p>Places to stay</p>
@@ -85,19 +87,20 @@ const Header = () => {
                     <>
                       <span onClick={() => navigate('/reservations')} className='link'>Reservations</span>
                       <span onClick={() => navigate('/bookings')} className='link'>Bookings</span>
+                      <span onClick={() => navigate('/')} className='link'>Sign out</span>
                     </>
                   {/* ) : ( */}
                     <>
                       <span onClick={() => navigate('/reservations')} className='link'>View Reservations</span>
                     </>
                   {/* )} */}
-                  <span  className='link'>Logout</span>
+                  <span  className='link'>Sign out</span>
                 {/* </div> */}
               </>
             {/* )} */}
           </div>
         </div>
-        <p className='acc-name'><AccountCircleIcon/> </p>
+        <span className='acc-name'><AccountCircleIcon/> </span>
         </div>
       </div>
           </div>
@@ -148,7 +151,7 @@ const Header = () => {
                 className="search-button"
                 onClick={() => setShowGuestPopup(true)}
               >
-                {/* {guestCount > 0 ? `Add guests` : `${guestCount} Guest`} */}
+                {/* {guestCount > 0 ? `Add guests` : `${guestCount} Guest`} */} Add guests
               </div>
             </div>
             {showGuestPopup && (
