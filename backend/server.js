@@ -28,3 +28,13 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  res.status(statusCode).json({
+    success: false,
+    message: err.message,
+    status: statusCode
+  });
+});
